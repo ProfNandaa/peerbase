@@ -1,0 +1,48 @@
+{% extends 'core/base_main.html' %}
+
+{% block main %}
+
+<div class="row">
+
+<div class="upper_section">
+
+	<a href="#" class="ui huge green button"><i class="cloud upload icon"></i> Upload</a>
+</div>
+
+<div class="ui grid container">
+
+	<table class="ui celled table">
+	  <thead>
+	    <tr>
+	    <th>Title</th>
+	    <th>Files</th>
+	    <th>Size (Mb)</th>
+	    <th>Seeds</th>
+	    <th>Leech</th>
+	    <th><strong>Credits</strong> (pb)</th>
+	    <th>Download</th>
+	  </tr>
+	  </thead>
+	  <tbody>
+	  {% for u in uploads %}
+	  <tr>
+	  	<td>{{ u.title }} </td>
+	  	<td> {{ u.files }} </td>
+	  	<td> {{ u.size }} </td>
+	  	<td> {{ u.seed }} </td>
+	  	<td> {{ u.leech }} </td>
+	  	<td> 5 </td>
+	  	<td> <a data-download href="https://torcache.net/torrent/DA029E25D8A390BDC6610599A7998293857E7234.torrent?title=[kat.cr]introducing.python.modern.computing.in.simple.packages.1st.edition.2014.pdf.gooner">
+	  	<i class="icon cloud download"></i> </a>
+	  </tr>
+	  {% endfor %}
+	  </tbody>
+	</table>
+
+</div>
+  	
+</div>
+
+
+
+{% endblock %}

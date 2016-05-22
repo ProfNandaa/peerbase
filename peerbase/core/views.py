@@ -11,3 +11,21 @@ def register(request):
 
 def login(request):
 	return render(request, 'core/login.html')
+
+def user_dashboard(request):
+	# dammy data
+	uploads = []
+	for i in range(1, 11):
+		upload = {
+			'title': 'Sample Upload ' + str(i),
+			'files': i + 4,
+			'size': (i + 4) * 64,
+			'seed': 4,
+			'leech': 2
+		}
+		uploads.append(upload)
+		
+	data = {
+		'uploads': uploads
+	}
+	return render(request, 'core/user_dashboard.html', data)
